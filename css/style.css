@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:ital,wght@1,400;1,500&family=Rubik+Gemstones&display=swap');
+
+*{
+
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition: all .2s linear;
+   text-transform: capitalize;
+   
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+body{
+   /* background: #282828!important;  */
+   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://media.istockphoto.com/id/1074291506/photo/golden-sparkle-background.jpg?s=612x612&w=0&k=20&c=Ml8Mx0C_DD9nTy3H5N2QwvcR-KoV4HmaA8nvo13U88s=");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.container{
+   max-width: 1200px;
+   margin:0 auto;
+   padding:3rem 2rem;
+}
+
+.container .title{
+   font-family: 'Poppins', sans-serif;
+   font-size: 3.5rem;
+   color:gold !important;
+
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.container .products-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:2rem;
+}
+
+.container .products-container .product{
+   text-align: center;
+   padding:3rem 2rem;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   outline: .1rem solid gold;
+   outline-offset: -1.5rem;
+   cursor: pointer;
+   background: #121212;
+}
+
+
+.container .products-container .product:hover{
+   outline: .2rem solid #d7be69;
+   outline-offset: 0;
+}
+
+.container .products-container .product img{
+   height: 25rem;
+}
+
+.container .products-container .product:hover img{
+   transform: scale(.9);
+}
+
+.container .products-container .product h3{
+   padding:.5rem 0;
+   font-size: 2rem;
+   color:white;
+}
+
+.container .products-container .product:hover h3{
+   color:#ffe99d;
+}
+
+.container .products-container .product .price{
+   font-size: 2rem;
+   color:#444;
+}
+
+.products-preview{
+   position: fixed;
+   top:0; left:0;
+   min-height: 100vh;
+   width: 100%;
+   background: rgba(0,0,0,.8);
+   display: none;
+   align-items: center;
+   justify-content: center;
+}
+
+.products-preview .preview{
+   display: none;
+   padding:2rem;
+   text-align: center;
+   /* background: #121212; */
+   /* background-image: linear-gradient(to bottom right, #282828, #121212); */
+   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://w0.peakpx.com/wallpaper/409/55/HD-wallpaper-marble-black-black-and-gold-gold.jpg");
+   background-clip: cover;
+   position: relative;
+   margin:2rem;
+   width: 40rem;
+}
+
+.products-preview .preview.active{
+   display: inline-block;
+}
+
+.products-preview .preview img{
+   height: 30rem;
+}
+
+.products-preview .preview .fa-times{
+   position: absolute;
+   top:1rem; right:1.5rem;
+   cursor: pointer;
+   color:#444;
+   font-size: 4rem;
+}
+
+.products-preview .preview .fa-times:hover{
+   transform: rotate(90deg);
+}
+
+.products-preview .preview h3{
+   color:gold;
+   padding:.5rem 0;
+   font-size: 2.5rem;
+}
+
+.products-preview .preview .stars{
+   padding:1rem 0;
+   font-size: 1.7rem;
+}
+
+.products-preview .preview .stars i{
+   color:#27ae60;
+}
+
+.products-preview .preview .stars span{
+   color:#999;
+}
+
+.products-preview .preview p{
+   line-height: 1.5;
+   padding:1rem 0;
+   font-size: 1.6rem;
+   color:white;
+}
+
+.products-preview .preview .price{
+   padding:1rem 0;
+   font-size: 2.5rem;
+   color:#27ae60;
+}
+
+.products-preview .preview .buttons{
+   display: flex;
+   gap:1.5rem;
+   flex-wrap: wrap;
+   margin-top: 1rem;
+}
+
+.products-preview .preview .buttons a{
+   text-decoration: none;
+   flex:1 1 16rem;
+   padding:1rem;
+   font-size: 1.8rem;
+   color:#444;
+   border:.1rem solid #444;
+}
+
+
+.products-preview .preview .buttons a.buy{
+   background: #eee;
+}
+
+
+
+.products-preview .preview .buttons a.buy:hover{
+   background: #444;
+   color:#fff;
+}
+
+
+
+@media (max-width:450px){
+
+   .container .products-container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap:2rem;
+   }
+   .container .products-container .product img{
+      height: 10rem;
+   }
+   
+
+}
+/* NAVBAR STYLING STARTS */
+
+
+/* .navbar {
+   
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 20px;
+   background-color: #121212;
+   color: gold;
+   }
+
+   .navbar-toggler
+
+   a {
+      text-decoration: none;
+      }
+
+      li {
+      list-style: none;
+      }
+
+   .nav-links a {
+   color: #ffe99d;
+   }
+   
+=
+   .logo {
+      font-family: 'Rubik Gemstones', cursive;
+   font-size: 32px;
+   }
+=
+   
+   .menu {
+      text-decoration: none;
+   display: flex;
+   gap: 1em;
+   font-size: 18px;
+   
+   }
+   .menu li:hover {
+   background-color: gray;
+   border-radius: 5px;
+   transition: 0.3s ease;
+   
+   }
+   .menu li {
+   padding: 5px 14px;
+   }
+   
+   
+   .services {
+   position: relative; 
+   }
+   .dropdown {
+   background-color: #121212;
+   padding: 1em 0;
+   position: absolute; 
+   display: none;
+   border-radius: 8px;
+   top: 35px;
+   }
+   .dropdown li + li {
+   margin-top: 10px;
+   }
+   
+   .dropdown li {
+   padding: 0.5em 1em;
+   width: 8em;
+   text-align: center;
+   }
+   
+   .dropdown li:hover {
+   background-color: #121212;
+   }
+   
+   .services:hover .dropdown {
+   display: block;
+   }
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px){
+
+   .products-preview .preview img{
+      height: 25rem;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+}
+
+
+
+
+
+input[type=checkbox]{
+
+   display: none;
+   } 
+   
+  
+   
+   .hamburger {
+   display: none;
+   font-size: 24px;
+   user-select: none;
+   
+   }
+   
+   
+   
+   @media (max-width: 768px) {
+   
+   .menu { 
+   display:none;
+   position: absolute;
+   background-color:#121212;
+   right: 0;
+   left: 0;
+   text-align: center;
+   padding: 16px 0;
+   }
+   
+   .menu li:hover {
+   display: inline-block;
+   background-color:gray;
+   transition: 0.3s ease;
+   }
+   
+   .menu li + li {
+   margin-top: 12px;
+   }
+   
+   input[type=checkbox]:checked ~ .menu{
+   display: block;
+   }
+   
+   .hamburger {
+   display: block;
+   }
+   
+   .dropdown {
+   left: 50%;
+   top: 30px;
+   transform: translateX(35%);
+   }
+   
+   .dropdown li:hover {
+   background-color: #121212;
+   }
+} */
+
+.about{
+   display: flex;
+   background: red;
+   width: 100%;
+   height: 50rem;
+}
+.main{
+   margin: 2% 5%;
+   width: 100em;
+   height: 90%;
+   background: black;
+   justify-items: center;
+}
+.judul-slider{
+   color: gold;
+}
+.second-slider{
+   color: white;
+}
+.active{
+   cursor: pointer;
+}
+.navbar-toggler-icon{
+   width: 50px;
+   height: 50px;
+}
+.navbar{
+   background-color: #121212;
+   height: auto;
+}
+.navbar-brand{
+   margin: 0;
+}
+.tengah{
+   text-align: center;
+   width: 100%;
+}
